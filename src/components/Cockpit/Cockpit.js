@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {} from 'react';
 import './Cockpit.css';
 const cockpit = (props) => {
 
@@ -17,17 +17,17 @@ const cockpit = (props) => {
 
     const classes = [];
 
-     if(props.persons.length <=2) {
+     if(props.personsLength <=2) {
        classes.push('red');
      }
 
-     if(props.persons.length <=1) {
+     if(props.personsLength <=1) {
        classes.push('bold');
      }
 
     return (
         <div className="Cockpit">
-        <h1> Hi, I'am React App</h1>
+        <h1> {props.title}</h1>
         <p className={classes.join(' ')}> This is really working</p>
         <button 
         style={style}
@@ -37,4 +37,4 @@ const cockpit = (props) => {
      
 };
 
-export default cockpit;
+export default React.memo(cockpit);

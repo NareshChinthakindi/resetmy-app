@@ -3,6 +3,7 @@ import './App.css';
 import Persons from '../components/Persons/Persons';
 //import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 import Cockpit from '../components/Cockpit/Cockpit';
+import WithClass from '../hoc/WithClass';
 
 class App extends Component {
   state = {
@@ -62,13 +63,14 @@ class App extends Component {
      
 
     return (
-      <div className="App">
+      <WithClass classes="App">
        <Cockpit showPersons={this.state.showPersons} 
-                persons = {this.state.persons}
+                personsLength = {this.state.persons.length}
                 clicked={this.tooglePersonHandler}
+                title={this.props.applicationTitle}
                 /> 
       {persons}
-       </div> 
+       </WithClass> 
        
 
       
